@@ -1,33 +1,29 @@
-import {Open_Sans} from "next/font/google"
-import './globals.css'
-import NavBar from "app/(shared)/NavBar";
-import { Inter } from 'next/font/google';
+import "./globals.css";
+import { Open_Sans } from "next/font/google";
+import NavBar from "./(shared)/NavBar";
 import Footer from "app/(shared)/Footer";
-import Trending from "./(home)/Trending";
-const openSans=Open_Sans({
-  subsets: ["latin"],
-})
 
-const inter = Inter({ subsets: ['latin'] })
+const openSans = Open_Sans({
+  subsets: ["latin"],
+});
 
 export const metadata = {
-  title: 'Blog Chatgpt App',
-  description: 'Blog built in nexts that uses ai',
-}
+  title: "Blog AI App",
+  description: "Blog built in Next JS that uses AI",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html className={openSans.className}lang="en">
-      <body >
-        <NavBar/>
- 
-        <Footer/>
+    <html className={openSans.className} lang="en">
+      <body>
+        <NavBar />
         {children}
-       </body>
+        <Footer />
+      </body>
     </html>
-  )
+  );
 }
