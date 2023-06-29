@@ -10,10 +10,7 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
-    
-    },
-    
-  
+  },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@prisma/client": "^4.16.1",
@@ -23,6 +20,7 @@
     "@tiptap/starter-kit": "^2.0.3",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
+    "cors": "^2.8.5",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
     "next": "13.4.7",
