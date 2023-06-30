@@ -10,7 +10,7 @@ type Props = {
   setContent: (content: string) => void;
   title: string;
 };
-const cors=require('cors');
+
 const Article = ({
   contentError,
   editor,
@@ -31,7 +31,7 @@ const Article = ({
       .setContent("Generating Ai Content. Please Wait...")
       .run();
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/openai/`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/openai`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -40,7 +40,6 @@ const Article = ({
       }),
     });
     const data = await response.json();
-    console.debug(data);
 
     editor.chain().focus().setContent(data.content).run();
     setContent(data.content);
