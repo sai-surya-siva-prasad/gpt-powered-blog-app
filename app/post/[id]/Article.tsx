@@ -40,6 +40,7 @@ const Article = ({
       }),
     });
     const data = await response.json();
+    console.debug(data);
 
     editor.chain().focus().setContent(data.content).run();
     setContent(data.content);
