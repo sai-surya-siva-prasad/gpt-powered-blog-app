@@ -216,14 +216,12 @@ const posts = [
 ];
 
 async function main() {
-    console.log(`Start seeding...`);
-    for (const post of posts) {
-      const createdPost = await prisma.post.create({ data: post });
-      console.log(`Created post with ID ${createdPost.id}`);
-    }
-    console.log(`Seeding finished.`);
+  console.log(`Start seeding...`);
+  for (const post of posts) {
+    await prisma.post.create({ data: post });
   }
-  
+  console.log(`Seeding finished.`);
+}
 
 main()
   .then(async () => {
