@@ -2,7 +2,7 @@ import { Editor, EditorContent } from "@tiptap/react";
 import React, { useState } from "react";
 import EditorMenuBar from "./EditorMenuBar";
 import { RocketLaunchIcon } from "@heroicons/react/24/solid";
-
+// This is what we called the highest grade
 type Props = {
   contentError: string;
   editor: Editor | null;
@@ -24,7 +24,7 @@ const Article = ({
     return null;
   }
 
-  const postAiContent = async () => {
+  const postAiContent = async () => {  
     editor
       .chain()
       .focus()
